@@ -11,8 +11,6 @@ const PORT = process.env.PORT || 3000;
 app.use(cors());
 app.use(express.json());
 
-const port = process.env.PORT || 3000;
-
 // Caminhos
 const FILE_PATH = path.join(__dirname, 'convidados.json');
 const FRONTEND_DIR = path.join(__dirname, '..', 'frontend');
