@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1" />
+	<title>Convite - Matheus 18 anos</title>
+	<link rel="stylesheet" href="style.css">
+	<!-- Fontes: Montserrat para corpo + Great Vibes para o nome em script -->
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&family=Great+Vibes&display=swap" rel="stylesheet">
+	<meta name="evento-data" content="2025-12-13T20:00" />
+</head>
+<body>
+	<!-- ...existing code... -->
+	<header class="hero">
+		<div class="hero-inner">
+			<h1 class="title">Aniversário — <span class="name-script">Matheus</span> — 18 anos</h1>
+			<p class="subtitle">Você foi convidado! 🎉</p>
+			<p class="lead">Vamos celebrar a maioridade do Matheus com som, luz e muita amizade.</p>
+
+			<div class="cta">
+				<button id="open-details" class="btn primary">Detalhes do evento</button>
+				<button id="open-rsvp" class="btn accent">Confirmar presença</button>
+			</div>
+		</div>
+
+		<!-- Balões decorativos -->
+		<div class="balloons">
+			<div class="balloon b1">🎈</div>
+			<div class="balloon b2">🎈</div>
+			<div class="balloon b3">🎈</div>
+		</div>
+	</header>
+
+	<main class="container">
+		<section class="countdown-card">
+			<h2>Faltam:</h2>
+			<div class="countdown" id="countdown">
+				<div><span id="days">00</span><small>dias</small></div>
+				<div><span id="hours">00</span><small>horas</small></div>
+				<div><span id="minutes">00</span><small>min</small></div>
+				<div><span id="seconds">00</span><small>seg</small></div>
+			</div>
+			<p class="event-note">Data: <span id="event-date-text"></span></p>
+		</section>
+
+		<section class="rsvp-preview card">
+			<h3>Lista de Confirmados</h3>
+			<ul id="guest-list" class="guest-list">
+				<!-- Lista populada pelo JS -->
+			</ul>
+			<p id="guest-count">Nenhum confirmado ainda.</p>
+		</section>
+	</main>
+
+	<!-- Modal: detalhes do evento -->
+<div id="modal-details" class="modal-overlay" aria-hidden="true">
+    <div class="modal-content">
+        <button class="modal-close" data-close>&times;</button>
+        <h2>Detalhes da Festa</h2>
+        <p><strong>Data & Hora:</strong> <span id="modal-event-date"></span></p>
+        <p><strong>Local:</strong> Casa do Matheus — Rua Catorrita, Jd. do Sol, 175</p>
+        <p><strong>Traje:</strong> Casual festivo</p>
+        <p><strong>Observações:</strong> Traga seu melhor sorriso e energia! 🎶</p>
+        <div class="modal-actions">
+            <button id="open-rsvp-2" class="btn accent">Confirmar Presença</button>
+            <button class="btn" data-close>Fechar</button>
+        </div>
+    </div>
+</div>
+
+<!-- Modal: RSVP -->
+<div id="modal-rsvp" class="modal-overlay" aria-hidden="true">
+    <div class="modal-content">
+        <button class="modal-close" data-close>&times;</button>
+        <h2>Confirmar Presença</h2>
+        <form id="rsvp-form" class="rsvp-form">
+            <label for="name">Seu nome</label>
+            <input id="name" name="name" type="text" required maxlength="50" placeholder="Seu nome" />
+
+            <label for="guests">Quantas pessoas virão com você?</label>
+            <input id="guests" name="guests" type="number" min="0" max="10" value="0" />
+
+            <label for="message">Mensagem (opcional)</label>
+            <textarea id="message" name="message" maxlength="250" placeholder="Deixe uma mensagem para o Matheus"></textarea>
+
+            <div class="form-actions">
+                <button type="submit" class="btn primary">Enviar confirmação</button>
+                <button type="button" class="btn" data-close>Cancelar</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+	<!-- Confetti canvas -->
+	<canvas id="confetti-canvas" class="confetti-canvas"></canvas>
+
+	<script src="./script.js" defer></script>
+
+<!-- http://localhost:8080/admin.html -->
+<!-- http://127.0.0.1:8080/ -->
+<!-- node server.js --> 
+<!-- http://localhost:3000 -->
+
+
+
+</body>
+</html>
